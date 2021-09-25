@@ -20,7 +20,7 @@ class RestaurantRecyclerViewAdapter(private val restaurantList: RestaurantList) 
             binding.apply {
                 textViewRestaurantName.text = restaurantItem.name
                 textViewRestaurantAddress.text = restaurantItem.address
-                Glide.with(root.context).load(restaurantItem.image).into(imageView11)
+                Glide.with(root.context).load(restaurantItem.image).into(imageViewRestaurant)
                 root.setOnClickListener {
                     itemClickListener(restaurantItem)
                 }
