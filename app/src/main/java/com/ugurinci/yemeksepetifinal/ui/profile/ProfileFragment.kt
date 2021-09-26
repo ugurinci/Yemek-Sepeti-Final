@@ -38,15 +38,19 @@ class ProfileFragment : Fragment() {
         auth = Firebase.auth
         db = Firebase.firestore
         binding.apply {
-            db.collection("Users").document(auth.uid!!).get().addOnSuccessListener {
-                user = it.toObject()!!
-                cardViewProfile.visibility = View.VISIBLE
-                textViewProfileName.text = user.name
-                textViewProfileEmail.text = user.email
-                textViewProfilePhone.text = user.phone
-                textViewProfileAddress.text = user.address
-                cardViewProfile.visibility = View.VISIBLE
-                progressBarProfile.visibility = View.INVISIBLE
+            db.collection("Users").get().addOnSuccessListener {
+                for (i in it) {
+                    user = i.toObject()
+                    if (user.uid == auth.uid) {
+                        cardViewProfile.visibility = View.VISIBLE
+                        textViewProfileName.text = user.name
+                        textViewProfileEmail.text = user.email
+                        textViewProfilePhone.text = user.phone
+                        textViewProfileAddress.text = user.address
+                        cardViewProfile.visibility = View.VISIBLE
+                        progressBarProfile.visibility = View.INVISIBLE
+                    }
+                }
             }
         }
     }

@@ -65,7 +65,7 @@ class RegisterFragment : Fragment() {
                         if (it.isSuccessful) {
                             val uid = it.result?.user?.uid.toString()
                             val user = User(uid, name, email, phone, address)
-                            db.collection("Users").document(user.uid).set(user)
+                            db.collection("Users").document().set(user)
                                 .addOnSuccessListener {
                                     val action =
                                         RegisterFragmentDirections.actionRegisterFragmentToLoginFragment()
