@@ -41,7 +41,6 @@ class ProfileFragment : Fragment() {
             db.collection("Users").whereEqualTo("uid", auth.uid).get().addOnSuccessListener {
                 for (i in it) {
                     user = i.toObject()
-                    cardViewProfile.visibility = View.VISIBLE
                     textViewProfileName.text = user.name
                     textViewProfileEmail.text = user.email
                     textViewProfilePhone.text = user.phone
