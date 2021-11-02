@@ -57,7 +57,7 @@ class RestaurantDetailViewModel @AssistedInject constructor(
             viewModelFactory: ViewModelFactory,
             id: String
         ): ViewModelProvider.Factory = object : ViewModelProvider.Factory {
-            override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+            override fun <T : ViewModel> create(modelClass: Class<T>): T {
                 return viewModelFactory.create(id) as T
             }
         }
