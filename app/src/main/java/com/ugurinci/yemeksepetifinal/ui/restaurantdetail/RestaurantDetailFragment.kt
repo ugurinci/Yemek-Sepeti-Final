@@ -31,7 +31,7 @@ class RestaurantDetailFragment : Fragment() {
     lateinit var viewModelFactory: RestaurantDetailViewModel.ViewModelFactory
 
     private val viewModel: RestaurantDetailViewModel by viewModels {
-        RestaurantDetailViewModel.provideFactory(viewModelFactory, args.id)
+        RestaurantDetailViewModel.provideFactory(viewModelFactory, args.restaurantId)
     }
 
     override fun onCreateView(

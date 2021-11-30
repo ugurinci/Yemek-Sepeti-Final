@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 class FoodDetailViewModel @AssistedInject constructor(
-    @Assisted val id: String,
+    @Assisted val foodId: String,
     private val foodDetailRepository: FoodDetailRepository
 ) : ViewModel() {
     private var _food = MutableLiveData<FoodItem>()
@@ -23,7 +23,7 @@ class FoodDetailViewModel @AssistedInject constructor(
     }
 
     private fun fetchFood() = viewModelScope.launch {
-        foodDetailRepository.fetchFoodById(id).collect {
+        foodDetailRepository.fetchFoodById(foodId).collect {
             if (it != null) {
                 _food.value = it.body()
             }
@@ -36,16 +36,16 @@ class FoodDetailViewModel @AssistedInject constructor(
 
     @AssistedFactory
     interface ViewModelFactory {
-        fun create(id: String): FoodDetailViewModel
+        fun create(foodId: String): FoodDetailViewModel
     }
 
     companion object {
         fun provideFactory(
             viewModelFactory: ViewModelFactory,
-            id: String
+            foodId: String
         ): ViewModelProvider.Factory = object : ViewModelProvider.Factory {
             override fun <T : ViewModel> create(modelClass: Class<T>): T {
-                return viewModelFactory.create(id) as T
+                return viewModelFactory.create(foodId) as T
             }
         }
     }

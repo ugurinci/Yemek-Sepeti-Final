@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 class RestaurantDetailViewModel @AssistedInject constructor(
-    @Assisted val id: String,
+    @Assisted val restaurantId: String,
     private val restaurantDetailRepository: RestaurantDetailRepository
 ) :
     ViewModel() {
@@ -30,7 +30,7 @@ class RestaurantDetailViewModel @AssistedInject constructor(
     }
 
     private fun fetchRestaurant() = viewModelScope.launch {
-        restaurantDetailRepository.fetchRestaurantsById(id).collect {
+        restaurantDetailRepository.fetchRestaurantsById(restaurantId).collect {
             if (it != null) {
                 _restaurant.value = it.body()
             }
@@ -41,7 +41,7 @@ class RestaurantDetailViewModel @AssistedInject constructor(
         restaurantDetailRepository.fetchFoods().collect {
             if (it != null) {
                 _foods.value = it.body()!!.filter { foodItem ->
-                    foodItem.restaurantId == id
+                    foodItem.restaurantId == restaurantId
                 }
             }
         }
@@ -49,16 +49,16 @@ class RestaurantDetailViewModel @AssistedInject constructor(
 
     @AssistedFactory
     interface ViewModelFactory {
-        fun create(id: String): RestaurantDetailViewModel
+        fun create(restaurantId: String): RestaurantDetailViewModel
     }
 
     companion object {
         fun provideFactory(
             viewModelFactory: ViewModelFactory,
-            id: String
+            restaurantId: String
         ): ViewModelProvider.Factory = object : ViewModelProvider.Factory {
             override fun <T : ViewModel> create(modelClass: Class<T>): T {
-                return viewModelFactory.create(id) as T
+                return viewModelFactory.create(restaurantId) as T
             }
         }
     }

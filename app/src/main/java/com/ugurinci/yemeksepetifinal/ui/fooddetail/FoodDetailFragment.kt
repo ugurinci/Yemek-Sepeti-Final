@@ -29,7 +29,7 @@ class FoodDetailFragment : Fragment() {
     lateinit var viewModelFactory: FoodDetailViewModel.ViewModelFactory
 
     private val viewModel: FoodDetailViewModel by viewModels {
-        FoodDetailViewModel.provideFactory(viewModelFactory, args.id)
+        FoodDetailViewModel.provideFactory(viewModelFactory, args.foodId)
     }
 
     override fun onCreateView(
