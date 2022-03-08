@@ -25,3 +25,7 @@ The designs are made on the Pixel 4 phone.
 ### gitignore.io
 
 [gitignore.io](https://www.toptal.com/developers/gitignore)
+
+### MAD score
+
+[MAD score](https://madscorecard.withgoogle.com/scorecards/1839463733/)
