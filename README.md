@@ -28,4 +28,4 @@ The designs are made on the Pixel 4 phone.
 
 ### MAD score
 
-[MAD score](https://madscorecard.withgoogle.com/scorecards/1839463733/)
+[MAD score](https://madscorecard.withgoogle.com/scorecard/share/243673172/)
