@@ -4,20 +4,28 @@ The designs are made on the Pixel 4 phone.
 
 ## Technologies which used
 
-- MVVM architecture
+- MVVM Architecture
 - Dagger Hilt
 - Retrofit
-- Coroutine
+- Coroutines
 - Firebase
 - Navigation
 - ViewBinding
 - ViewPager2
 - Recyclerview
-- Lottie
-- Glide
-- Dots Indicator
-- mockAPI
+- [Lottie](https://github.com/airbnb/lottie-android)
+- [Glide](https://github.com/bumptech/glide)
+- [Dots Indicator](https://github.com/tommybuonomo/dotsindicator)
+- [mockAPI](https://mockapi.io/)
 
 |Splash Onboarding|Login Register|Application Flow|
 |-|-|-|
 |<img src="https://github.com/ugurinci/Yemek-Sepeti-Final/blob/main/previews/Splash%20Onboarding.gif">|<img src="https://github.com/ugurinci/Yemek-Sepeti-Final/blob/main/previews/Login%20Register.gif">|<img src="https://github.com/ugurinci/Yemek-Sepeti-Final/blob/main/previews/Application%20Flow.gif">|
+
+### gitignore.io
+
+[gitignore.io](https://www.toptal.com/developers/gitignore)
+
+### MAD score
+
+[MAD score](https://madscorecard.withgoogle.com/scorecard/share/243673172/)
