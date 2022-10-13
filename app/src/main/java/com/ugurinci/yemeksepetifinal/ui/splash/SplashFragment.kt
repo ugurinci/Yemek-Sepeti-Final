@@ -29,18 +29,18 @@ class SplashFragment : Fragment() {
         binding.apply {
             animationView.playAnimation()
             animationView.addAnimatorListener(object : Animator.AnimatorListener {
-                override fun onAnimationStart(p0: Animator?) {
+                override fun onAnimationStart(animation: Animator) {
                 }
 
-                override fun onAnimationEnd(p0: Animator?) {
+                override fun onAnimationEnd(animation: Animator) {
                     val action = SplashFragmentDirections.actionSplashFragmentToOnBoardingFragment()
                     findNavController().navigate(action)
                 }
 
-                override fun onAnimationCancel(p0: Animator?) {
+                override fun onAnimationCancel(animation: Animator) {
                 }
 
-                override fun onAnimationRepeat(p0: Animator?) {
+                override fun onAnimationRepeat(animation: Animator) {
                 }
             })
         }

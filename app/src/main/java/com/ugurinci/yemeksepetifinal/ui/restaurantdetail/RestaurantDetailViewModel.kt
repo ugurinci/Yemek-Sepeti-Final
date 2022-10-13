@@ -7,14 +7,12 @@ import com.ugurinci.yemeksepetifinal.data.repository.RestaurantDetailRepository
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 class RestaurantDetailViewModel @AssistedInject constructor(
     @Assisted val restaurantId: String,
     private val restaurantDetailRepository: RestaurantDetailRepository
-) :
-    ViewModel() {
+) : ViewModel() {
 
     private var _restaurant = MutableLiveData<RestaurantItem>()
 

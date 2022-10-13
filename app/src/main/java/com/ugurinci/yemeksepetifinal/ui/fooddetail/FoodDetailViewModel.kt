@@ -1,19 +1,19 @@
 package com.ugurinci.yemeksepetifinal.ui.fooddetail
 
 import androidx.lifecycle.*
-import com.ugurinci.yemeksepetifinal.utils.Cart
 import com.ugurinci.yemeksepetifinal.data.remote.FoodItem
 import com.ugurinci.yemeksepetifinal.data.repository.FoodDetailRepository
+import com.ugurinci.yemeksepetifinal.utils.Cart
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 class FoodDetailViewModel @AssistedInject constructor(
     @Assisted val foodId: String,
     private val foodDetailRepository: FoodDetailRepository
 ) : ViewModel() {
+
     private var _food = MutableLiveData<FoodItem>()
 
     val food: LiveData<FoodItem> = _food

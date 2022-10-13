@@ -28,7 +28,7 @@ class OnBoardingFragment : Fragment() {
         binding.apply {
             viewPager.adapter = pagerAdapter
             viewPager.setPageTransformer(DepthPageTransformer())
-            wormDotsIndicator.setViewPager2(viewPager)
+            wormDotsIndicator.attachTo(viewPager)
         }
     }
 
