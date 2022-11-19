@@ -12,7 +12,7 @@ buildscript {
         // in the individual module build.gradle files
 
         //navigation safe args
-        classpath 'androidx.navigation:navigation-safe-args-gradle-plugin:2.5.2'
+        classpath 'androidx.navigation:navigation-safe-args-gradle-plugin:2.5.3'
 
         //google services for firebase
         classpath 'com.google.gms:google-services:4.3.14'
